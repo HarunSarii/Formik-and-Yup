@@ -1,4 +1,4 @@
-import { useField } from "formik";
+import { useField, ErrorMessage } from "formik";
 
 export const TextField = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -6,7 +6,16 @@ export const TextField = ({ label, ...props }) => {
   return (
     <div className="mb-2">
       <label htmlFor={field.name}>{label}</label>
-      <input id={field.name} />
+      <input
+        className={`form-control shadow-none   ${
+          meta.touched && meta.error && "is-invalid"
+        }`}
+        id={field.name}
+        {...field}
+        {...props}
+        autoComplete="off"
+      />
+      <ErrorMessage component="div" name={field.name} className="error" />
     </div>
   );
 };
