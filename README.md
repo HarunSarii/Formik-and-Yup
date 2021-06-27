@@ -1,3 +1,5 @@
+![formik](https://user-images.githubusercontent.com/75949382/123540275-d10e7400-d746-11eb-8e0e-dcf5839483ce.gif)
+
 # Signup form with formik
 Create simple signup form with formik and use yup for the validation
 
